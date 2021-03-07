@@ -24,7 +24,7 @@ const FormContainer = styled.form`
   border: 1px solid #fff;
   border-radius: 4px;
   max-width: 90%;
-  /* padding: rem 2rem 1rem; */
+  padding: 1rem 2rem 1rem;
 `
 
 const Prompt = styled.label`
