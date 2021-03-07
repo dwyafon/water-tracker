@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-shrink: 0;
   color: #0c1629;
   background-color: #ccc;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   min-width: 100%;
   max-width: 100%;
 `

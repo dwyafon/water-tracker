@@ -5,17 +5,16 @@ import styled from 'styled-components'
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: #fff;
-  padding-left: 1rem;
-  padding-top: 1rem;
+  padding: 1rem;
   min-width: 100%;
-  max-width: 100%;
 `
 
 const AppName = styled.div`
   display: flex;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `
 
 const HeaderIcon = styled.div`

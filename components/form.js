@@ -6,14 +6,14 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 100%;
   max-width: 100%;
-`
+  `
 
 const Intro = styled.h2`
   color: #fff;
-  max-width: 40rem;
   text-align: center;
+  font-size: 1.1rem;
+  padding: 0.5rem;
 `
 
 const FormContainer = styled.form`
@@ -23,8 +23,8 @@ const FormContainer = styled.form`
   justify-content: center;
   border: 1px solid #fff;
   border-radius: 4px;
-  width: 600px;
-  padding: 2rem 4rem 1rem;
+  max-width: 90%;
+  /* padding: rem 2rem 1rem; */
 `
 
 const Prompt = styled.label`

@@ -5,12 +5,15 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 
 const Container = styled.div`
-  min-height: 100vh;
-  min-width: 100vw;
-  background: linear-gradient(45deg, #472718, #1ccd99);
-  background-size: cover;
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr 1fr auto;
+  grid-template-columns: 100%;
+  background: linear-gradient(45deg, #472718, #1ccd99) no-repeat center center;
+  background-size: cover;
+  overflow: auto;
+
 `
 
 const Layout = ({ children }) => {
