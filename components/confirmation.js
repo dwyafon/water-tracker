@@ -1,9 +1,10 @@
-import React from 'react'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// import React from 'react'
+// import Head from 'next/head'
+// import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
-import Layout from '../components/layout'
-import Form from '../components/form'
+// import Layout from '../components/layout'
+// import Form from '../components/form'
+import Link from 'next/link'
 
 const Container = styled.div`
   display: flex;
@@ -30,15 +31,19 @@ const Button = styled.button`
   margin-left: 1rem;
 `
 
-const Confirmation = () => {
+const Confirmation = ({ litres, hours, handleSubmit }) => {
+  const average = (Math.round((litres / hours) * 100) / 100)
+
   return (
     <Container>
       <Question>
-        That's an average of x litre(s) every hour, over 5 hour(s). Is this correct?
+        That's an average of {average} litre(s) every hour, over {hours} hour(s). Is this correct?
       </Question>
       <ButtonContainer>
+      <Link href="/tracker">
         <Button>Yes</Button>
-        <Button>No</Button>
+        </Link>
+        <Button onClick={handleSubmit}>No</Button>
       </ButtonContainer>
     </Container>
   )

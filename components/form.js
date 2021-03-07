@@ -1,5 +1,7 @@
-import styles from '../styles/Home.module.css'
+import { useState } from 'react'
+// import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
+import Confirmation from '../components/confirmation'
 
 const Container = styled.div`
   display: flex;
@@ -7,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  `
+`
 
 const Intro = styled.h2`
   color: #fff;
@@ -41,7 +43,7 @@ const Input = styled.input.attrs(() => ({
   text-align: center;
   color: #fff;
   margin-bottom: 2rem;
-  border-radius: 4px; 
+  border-radius: 4px;
   background: transparent;
 `
 
@@ -55,6 +57,25 @@ const Button = styled.button`
 `
 
 const Form = () => {
+  const [litres, setlitres] = useState(0)
+  const [hours, setHours] = useState(0)
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleLitres = (e) => {
+    let result = parseInt(e.target.value)
+    setlitres(result)
+  }
+
+  const handleHours = (e) => {
+    let result = parseInt(e.target.value)
+    setHours(result)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(!submitted)
+  }
+
   return (
     <Container>
       <Intro>
@@ -63,11 +84,12 @@ const Form = () => {
       </Intro>
       <FormContainer>
         <Prompt>How many litres of water do you want to drink today?</Prompt>
-        <Input required />
+        <Input value={litres} onChange={handleLitres} required />
         <Prompt>Over how many hours do you want to drink this amount?</Prompt>
-        <Input required />
-        <Button>Submit</Button>
+        <Input value={hours} onChange={handleHours} required />
+        {!submitted && <Button onClick={handleSubmit}>Submit</Button>}
       </FormContainer>
+      {submitted && <Confirmation litres={litres} hours={hours} handleSubmit={handleSubmit} />}
     </Container>
   )
 }

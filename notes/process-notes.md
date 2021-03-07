@@ -12,3 +12,9 @@ Idea: A simple app to keep track of how much water one has drunk throughout the 
 - As a developer, I want a stop button so I can stop the timer before the official end time, if needed
 - As a devloper, I want access to the terms and conditions of the app so I can understsand what's ok and what's not ok
 - As a user, I want know more information about the app so I can understand who made it and why they made it
+
+### Steps
+
+- User enters amount of water in litres for the day
+- User enters the number of hours over which this amount in litres is to be consumed
+- User clicks submit button, or presses the enter key, to submit -- 

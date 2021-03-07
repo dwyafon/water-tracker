@@ -1,14 +1,23 @@
 // import styles from '../styles/Home.module.css'
 import { IoWaterOutline } from 'react-icons/io5'
 import styled from 'styled-components'
+import breakpoints from '../styles/breakpoints'
 
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   color: #fff;
   padding: 1rem;
   min-width: 100%;
+
+  ${breakpoints.sm`
+    align-items: center;
+  `}
+
+  ${breakpoints.md`
+    align-items: flex-start;
+  `}
 `
 
 const AppName = styled.div`
@@ -28,22 +37,19 @@ const SubHeader = styled.div`
 `
 
 const Header = () => {
-    return (
+  return (
+    <HeaderContainer>
+      <AppName>
+        {' '}
+        <HeaderIcon>
+          {' '}
+          <IoWaterOutline />
+        </HeaderIcon>
+        <HeaderName> H20 Tracker</HeaderName>
+      </AppName>
+      <SubHeader>Stay hydrated and stay on schedule</SubHeader>
+    </HeaderContainer>
+  )
+}
 
-        <HeaderContainer>
-          <AppName>
-            {' '}
-            <HeaderIcon>
-              {' '}
-              <IoWaterOutline />
-            </HeaderIcon>
-            <HeaderName> H20 Tracker</HeaderName>
-          </AppName>
-          <SubHeader>Stay hydrated and stay on schedule</SubHeader>
-        </HeaderContainer>
-
-    )
-  }
-  
-  export default Header
-  
+export default Header
