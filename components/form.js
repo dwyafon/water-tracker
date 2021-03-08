@@ -34,18 +34,18 @@ const Prompt = styled.label`
   margin-bottom: 1rem;
 `
 
-const Input = styled.input.attrs(() => ({
-  type: 'number',
-  placeholder: '0',
-}))`
-  border: 1px solid #fff;
-  padding: 0.5rem 0.1rem;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 2rem;
-  border-radius: 4px;
-  background: transparent;
-`
+// const Input = styled.input.attrs(() => ({
+//   type: 'number',
+//   required,
+// }))`
+//   border: 1px solid #fff;
+//   padding: 0.5rem 0.1rem;
+//   text-align: center;
+//   color: #fff;
+//   margin-bottom: 2rem;
+//   border-radius: 4px;
+//   background: transparent;
+// `
 
 const Button = styled.button`
   background: transparent;
@@ -56,17 +56,14 @@ const Button = styled.button`
   margin-left: 0.5rem;
 `
 
-const Form = () => {
-
-  const WaterContext = createContext()
-
-  const [litres, setlitres] = useState(0)
-  const [hours, setHours] = useState(0)
+const Form = ({ litres, setLitres, hours, setHours }) => {
+  // const [litres, setlitres] = useState(0)
+  // const [hours, setHours] = useState(0)
   const [submitted, setSubmitted] = useState(false)
 
   const handleLitres = (e) => {
     let result = parseInt(e.target.value)
-    setlitres(result)
+    setLitres(result)
   }
 
   const handleHours = (e) => {
@@ -76,7 +73,11 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSubmitted(!submitted)
+    if (litres <= 0 || hours <= 0) {
+      return
+    } else {
+      setSubmitted(!submitted)
+    }
   }
 
   return (
@@ -87,12 +88,18 @@ const Form = () => {
       </Intro>
       <FormContainer>
         <Prompt>How many litres of water do you want to drink today?</Prompt>
-        <Input value={litres} onChange={handleLitres} required />
+        <input onChange={handleLitres} type='number' required />
         <Prompt>Over how many hours do you want to drink this amount?</Prompt>
-        <Input value={hours} onChange={handleHours} required />
-        {!submitted && <Button onClick={handleSubmit}>Submit</Button>}
+        <input onChange={handleHours} type='number' required />
+        {litres > 0 && hours  > 0 && <Button onClick={handleSubmit}>Submit</Button>}
       </FormContainer>
-      {submitted && <Confirmation litres={litres} hours={hours} handleSubmit={handleSubmit} />}
+      {submitted && (
+        <Confirmation
+          litres={litres}
+          hours={hours}
+          handleSubmit={handleSubmit}
+        />
+      )}
     </Container>
   )
 }

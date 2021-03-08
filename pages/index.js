@@ -4,12 +4,17 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import Form from '../components/form'
 
-const Home = () => {
+const Home = ({ litres, setLitres, hours, setHours }) => {
   return (
     <>
-    <Layout>
-      <Form />
-    </Layout>
+      <Layout>
+        <Form
+          litres={litres}
+          setLitres={setLitres}
+          hours={hours}
+          setHours={setHours}
+        />
+      </Layout>
     </>
   )
 }

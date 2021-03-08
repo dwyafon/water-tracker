@@ -32,24 +32,23 @@ const Button = styled.button`
   cursor: pointer;
 `
 
-const Console = () => {
+const Console = ({ average }) => {
   const [amount, setAmount] = useState(0)
 
-    const handleH2O = () => {
-        setAmount(amount + 1)
-    }
+  const handleH2O = () => {
+    setAmount(amount + average)
+  }
 
   return (
     <>
       <Text>
-        Click the H2O button below each time you have finished drinking {}{' '}
-        litres of water
+        Click the H2O button below each time you have finished drinking{' '}
+        {average} {average === 1 ? 'litre' : 'litres'} of water
       </Text>
       <ConsoleContainer>
         <Text>You have consumed</Text>
         <Amount>{amount}</Amount>
         <Text>litres of water so far</Text>
-
         <Button onClick={handleH2O}>H2O</Button>
       </ConsoleContainer>
     </>

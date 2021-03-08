@@ -1,7 +1,12 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { useState } from 'react'
+
+const Application = ({ Component, pageProps }) => {
+  const [litres, setLitres] = useState(0)
+  const [hours, setHours] = useState(0)
+
+  return <Component {...pageProps} litres={litres} setLitres={setLitres} hours={hours} setHours={setHours} />
 }
 
-export default MyApp
+export default Application

@@ -23,7 +23,9 @@ const Time = styled.div`
   margin-bottom: 1rem;
 `
 
-const Timer = () => {
+const Timer = ({ litres, hours }) => {
+  const average = (Math.round((litres / hours) * 100) / 100)
+
   const [time, setTime] = useState({
     hours: '00',
     minutes: '00',
@@ -60,7 +62,7 @@ const Timer = () => {
         <span>:</span>
         <span className='seconds'>{time.seconds}</span>
       </Time>
-      <Console />
+      <Console average={average}/>
     </Container>
   )
 }

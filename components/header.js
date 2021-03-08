@@ -2,6 +2,7 @@
 import { IoWaterOutline } from 'react-icons/io5'
 import styled from 'styled-components'
 import breakpoints from '../styles/breakpoints'
+import Link from 'next/link'
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -45,7 +46,9 @@ const Header = () => {
           {' '}
           <IoWaterOutline />
         </HeaderIcon>
-        <HeaderName> H20 Tracker</HeaderName>
+        <Link href='/'>
+          <HeaderName> H20 Tracker</HeaderName>
+        </Link>
       </AppName>
       <SubHeader>Stay hydrated and stay on schedule</SubHeader>
     </HeaderContainer>

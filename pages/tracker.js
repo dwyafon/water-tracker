@@ -7,10 +7,10 @@ import Console from '../components/console'
 
 
 
-const Tracker = () => {
+const Tracker = ({ litres, hours }) => {
   return (
     <Layout>
-      <Timer />
+      <Timer litres={litres} hours={hours} />
     </Layout>
   )
 }
