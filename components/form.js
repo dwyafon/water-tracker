@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 // import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import Confirmation from '../components/confirmation'
@@ -57,6 +57,9 @@ const Button = styled.button`
 `
 
 const Form = () => {
+
+  const WaterContext = createContext()
+
   const [litres, setlitres] = useState(0)
   const [hours, setHours] = useState(0)
   const [submitted, setSubmitted] = useState(false)

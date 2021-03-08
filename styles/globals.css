@@ -32,3 +32,10 @@ a {
 ::placeholder {
   color: #fff;
 }
+
+.hours,
+.minutes,
+.seconds {
+  padding: 0.9rem;
+  width: 4rem;
+}
