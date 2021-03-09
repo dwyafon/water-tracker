@@ -37,7 +37,7 @@ const Confirmation = ({ litres, hours, handleSubmit }) => {
   return (
     <Container>
       <Question>
-        That's an average of {average} {average === 1 ? 'litre' : 'litres'} every hour, over {hours} {hours === 1 ? 'hour' : 'hours'}. Is this correct?
+        That's an average of {average} {average === 1 ? 'litre' : 'litres'} (or {average * 1000} mililitres) every hour, over {hours} {hours === 1 ? 'hour' : 'hours'}. Is this correct?
       </Question>
       <ButtonContainer>
       <Link href="/tracker">

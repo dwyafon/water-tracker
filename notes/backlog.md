@@ -1,4 +1,13 @@
 ## Landing Page
+---
+[x] Grab inputs and add to state
 
-- Grab inputs and add to state
-- Set up state 
+[x] Set up state 
+
+[] validate inputs
+
+
+## Tracker Page
+---
+[x] Access state globally via pages/_app.js
+[]  
