@@ -9,6 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 100%;
+  margin-bottom: 2rem;
 `
 
 const Intro = styled.h2`
@@ -59,7 +60,7 @@ const Button = styled.button`
 const Form = ({ litres, setLitres, hours, setHours }) => {
   // const [litres, setlitres] = useState(0)
   // const [hours, setHours] = useState(0)
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(true)
 
   const handleLitres = (e) => {
     let result = parseInt(e.target.value)
@@ -91,15 +92,16 @@ const Form = ({ litres, setLitres, hours, setHours }) => {
         <input onChange={handleLitres} type='number' required />
         <Prompt>Over how many hours do you want to drink this amount?</Prompt>
         <input onChange={handleHours} type='number' required />
-        {litres > 0 && hours  > 0 && <Button onClick={handleSubmit}>Submit</Button>}
+        {submitted && litres > 0 && hours  > 0 && <Button onClick={handleSubmit}>Submit</Button>}
+        {!submitted && litres > 0 && hours > 0 && (
+          <Confirmation
+            litres={litres}
+            hours={hours}
+            handleSubmit={handleSubmit}
+          />
+        )}
       </FormContainer>
-      {submitted && (
-        <Confirmation
-          litres={litres}
-          hours={hours}
-          handleSubmit={handleSubmit}
-        />
-      )}
+   
     </Container>
   )
 }
