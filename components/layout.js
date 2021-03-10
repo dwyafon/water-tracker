@@ -11,7 +11,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-  background: linear-gradient(45deg, #472718, #1ccd99) no-repeat center center;
+  background: linear-gradient(45deg, #151E93, #2AB0E8) no-repeat center center;
   background-size: cover;
   overflow: auto;
 
