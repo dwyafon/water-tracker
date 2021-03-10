@@ -5,9 +5,10 @@ import breakpoints from '../styles/breakpoints'
 const Container = styled.div`
   display: flex;
   flex-shrink: 0;
-  color: #0c1629;
-  background-color: #ccc;
+  color: rgb(16, 24, 78);
+  background-color: #ddd;
   min-width: 100%;
+  border-bottom: 1px solid #ddd;
 
   ${breakpoints.sm`
     justify-content: center;

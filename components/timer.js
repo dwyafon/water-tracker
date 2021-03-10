@@ -15,12 +15,33 @@ const Container = styled.div`
 `
 
 const Time = styled.div`
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   margin-bottom: 1rem;
+  background: rgb(16, 24, 78, 0.1);
+  
+  ${breakpoints.sm`
+     margin: 1rem;
+  `}
+
+  ${breakpoints.md`
+    margin: 2rem 10rem;
+  `}
+
+  ${breakpoints.lg`
+    margin: 3rem 15rem;
+    padding: 1rem;
+  `}
+
+${breakpoints.xl`
+    margin: 3rem 35rem;
+  `}
+
+
 `
 
 const Timer = ({ litres, hours }) => {

@@ -5,17 +5,73 @@ import { useState, useEffect } from 'react'
 
 const ConsoleContainer = styled.div`
   padding: 2rem 2rem;
-  border: 1px solid #fff;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background: rgb(16, 24, 78, 0.1);
+
+  ${breakpoints.sm`
+     margin: 1rem;
+  `}
+
+  ${breakpoints.md`
+    margin: 2rem 10rem;
+  `}
+
+  ${breakpoints.lg`
+    margin: 3rem 15rem;
+    padding: 3rem;
+  `}
+
+  ${breakpoints.xl`
+    margin: 1.5rem 35rem;
+  `}
+`
+
+const InstructionText = styled.div`
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+
+  ${breakpoints.sm`
+    margin: 0.5rem 1rem ;
+  `}
+
+  ${breakpoints.md`
+    margin: 2rem 10rem ;
+  `}
+
+  ${breakpoints.lg`
+    margin: 2rem 16rem;
+  `}
+
+  ${breakpoints.xl`
+    margin: 1.5rem 35rem;
+  `}
+
 `
 
 const Text = styled.div`
   font-size: 1.1rem;
   text-align: center;
   margin-bottom: 0.5rem;
+
+  ${breakpoints.sm`
+    margin: 0.5rem 1rem ;
+  `}
+
+  ${breakpoints.md`
+    margin: 1rem 6rem ;
+  `}
+  ${breakpoints.lg`
+    margin: 1rem 3rem;
+  `}
+
+  ${breakpoints.xl`
+    margin: 1rem 2rem;
+  `}
 `
 
 const Amount = styled.div`
@@ -41,10 +97,10 @@ const Console = ({ average }) => {
 
   return (
     <>
-      <Text>
+      <InstructionText>
         Click the H2O button below each time you have finished drinking{' '}
         {average} {average === 1 ? 'litre' : 'litres'} of water
-      </Text>
+      </InstructionText>
       <ConsoleContainer>
         <Text>You have consumed</Text>
         <Amount>{amount}</Amount>
