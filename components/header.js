@@ -50,7 +50,7 @@ const Header = () => {
           <HeaderName> H20 Tracker</HeaderName>
         </Link>
       </AppName>
-      <SubHeader>Stay hydrated and stay on schedule</SubHeader>
+      <SubHeader>Stay on schedule and stay hydrated</SubHeader>
     </HeaderContainer>
   )
 }

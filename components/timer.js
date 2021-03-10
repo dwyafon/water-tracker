@@ -36,7 +36,7 @@ const Timer = ({ litres, hours }) => {
   useEffect(() => {
     const timerID = setInterval(() => {
       const sCount = time.counter % 60
-      const mCount = Math.floor(time.counter / 60)
+      const mCount = time.counter >= 3600 ? Math.floor((time.counter / 60) - 60) : Math.floor(time.counter / 60)
       const hCount = Math.floor(time.counter / 3600)
 
       const newSec = String(sCount).length === 1 ? `0${sCount}` : sCount
