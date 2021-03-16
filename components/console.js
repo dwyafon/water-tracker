@@ -104,7 +104,7 @@ const Console = ({ average }) => {
       <ConsoleContainer>
         <Text>You have consumed</Text>
         <Amount>{amount}</Amount>
-        <Text>litres of water so far</Text>
+        <Text>{amount === 1 ? 'litre' : 'litres'} of water so far</Text>
         <Button onClick={handleH2O}>H2O</Button>
       </ConsoleContainer>
     </>
