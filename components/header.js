@@ -34,7 +34,9 @@ const HeaderIcon = styled.div`
   margin-right: 0.5rem;
 `
 
-const HeaderName = styled.div``
+const HeaderName = styled.div`
+  cursor:pointer;  
+`
 
 const SubHeader = styled.div`
   font-size: 0.9rem;
