@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import breakpoints from '../styles/breakpoints'
 import styled from 'styled-components'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Console from '../components/console'
 
 const Container = styled.div`
@@ -56,13 +56,13 @@ const Timer = ({ litres, hours }) => {
 
   useEffect(() => {
     const timerID = setInterval(() => {
-      const sCount = time.counter % 60
-      const mCount = time.counter >= 3600 ? Math.floor((time.counter / 60) - 60) : Math.floor(time.counter / 60)
       const hCount = Math.floor(time.counter / 3600)
+      const mCount = Math.floor((time.counter / 60) % 60)
+      const sCount = time.counter % 60
 
-      const newSec = String(sCount).length === 1 ? `0${sCount}` : sCount
-      const newMin = String(mCount).length === 1 ? `0${mCount}` : mCount
       const newHr = String(hCount).length === 1 ? `0${hCount}` : hCount
+      const newMin = String(mCount).length === 1 ? `0${mCount}` : mCount
+      const newSec = String(sCount).length === 1 ? `0${sCount}` : sCount
 
       setTime((prevState) => ({
         seconds: newSec,

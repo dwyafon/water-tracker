@@ -31,8 +31,6 @@ const Intro = styled.h2`
     font-size: 2.5rem;
     padding: 0 10rem;
   `}
-
-
 `
 
 const FormContainer = styled.form`

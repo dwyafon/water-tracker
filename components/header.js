@@ -9,15 +9,18 @@ const HeaderContainer = styled.div`
   flex-direction: column;
 
   color: #fff;
-  padding: 1rem;
+ 
+  padding: 2rem auto 0;
   min-width: 100%;
 
   ${breakpoints.sm`
     align-items: center;
+    margin-top: 2.5rem;
   `}
 
   ${breakpoints.md`
     align-items: flex-start;
+    padding-left: 2rem;
   `}
 `
 

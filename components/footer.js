@@ -5,7 +5,7 @@ import breakpoints from '../styles/breakpoints'
 const Container = styled.div`
   display: flex;
   flex-shrink: 0;
-  color: rgb(16, 24, 78);
+  color: #000;
   background-color: #ddd;
   min-width: 100%;
   border-bottom: 1px solid #ddd;
