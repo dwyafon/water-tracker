@@ -17,9 +17,10 @@ a {
   cursor: pointer;
 }
 
-/* * a:hover {
-  border-bottom: 1px solid rgb(16, 24, 78); 
-}  */
+a:hover {
+  background: rgb(16, 24, 78, 0.1);
+  color: #fff;
+} 
 
 * {
   box-sizing: border-box;

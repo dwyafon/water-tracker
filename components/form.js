@@ -12,7 +12,6 @@ const Container = styled.div`
   margin-bottom: 2rem;
 `
 
-
 const Intro = styled.h2`
   color: #fff;
   text-align: center;
@@ -38,11 +37,10 @@ const FormContainer = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid #fff; */
   border-radius: 4px;
   max-width: 90%;
   padding: 1rem 2rem 1rem;
-  background: rgb(16, 24, 78, 0.1)
+  background: rgb(16, 24, 78, 0.1);
 `
 
 const Prompt = styled.label`
@@ -60,8 +58,6 @@ const Button = styled.button`
 `
 
 const Form = ({ litres, setLitres, hours, setHours }) => {
-  // const [litres, setlitres] = useState(0)
-  // const [hours, setHours] = useState(0)
   const [submitted, setSubmitted] = useState(true)
 
   const handleLitres = (e) => {
@@ -85,27 +81,27 @@ const Form = ({ litres, setLitres, hours, setHours }) => {
 
   return (
     <Container>
-        {' '}
-        <Intro>
-          An app to help you set and track your water consumption, meet your
-          goals, and support your health
-        </Intro>
-        <FormContainer>
-          <Prompt>How many litres of water do you want to drink today?</Prompt>
-          <input onChange={handleLitres} type='number' required />
-          <Prompt>Over how many hours do you want to drink this amount?</Prompt>
-          <input onChange={handleHours} type='number' required />
-          {submitted && litres > 0 && hours > 0 && (
-            <Button onClick={handleSubmit}>Submit</Button>
-          )}
-          {!submitted && litres > 0 && hours > 0 && (
-            <Confirmation
-              litres={litres}
-              hours={hours}
-              handleSubmit={handleSubmit}
-            />
-          )}
-        </FormContainer>
+      {' '}
+      <Intro>
+        An app to help you set and track your water consumption, meet your
+        goals, and support your health
+      </Intro>
+      <FormContainer>
+        <Prompt>How many litres of water do you want to drink today?</Prompt>
+        <input onChange={handleLitres} type='number' required />
+        <Prompt>Over how many hours do you want to drink this amount?</Prompt>
+        <input onChange={handleHours} type='number' required />
+        {submitted && litres > 0 && hours > 0 && (
+          <Button onClick={handleSubmit}>Submit</Button>
+        )}
+        {!submitted && litres > 0 && hours > 0 && (
+          <Confirmation
+            litres={litres}
+            hours={hours}
+            handleSubmit={handleSubmit}
+          />
+        )}
+      </FormContainer>
     </Container>
   )
 }
