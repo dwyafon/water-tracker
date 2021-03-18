@@ -13,7 +13,7 @@ const TermsConditions = () => {
   return (
     <Layout>
       <Container>
-        <h1>About</h1>
+        <h1>Terms & Conditions</h1>
       </Container>
     </Layout>
   )

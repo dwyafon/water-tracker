@@ -13,7 +13,7 @@ const Guidelines = () => {
   return (
     <Layout>
       <Container>
-        <h1>About</h1>
+        <h1>Guidelines</h1>
       </Container>
     </Layout>
   )
